@@ -1,0 +1,5 @@
+[Desktop Entry]
+Name=Dispersion Simulator
+Type=Application
+Exec=/home/daniel/git/teste_daniel_silva/src/gui.py
+Icon=/home/daniel/git/teste_daniel_silva/src/ico.jpg

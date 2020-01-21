@@ -1,0 +1,58 @@
+#!/usr/bin/env python
+# -*- coding: utf-8 -*-
+import random
+import os
+import sys
+
+if(sys.argv != "" and len(sys.argv) != 3):
+    print("Numero de parametos incorretos!")
+    exit()
+    
+row = int(sys.argv[1])
+column = int(sys.argv[2])
+
+def default_config(center):
+    malha="data/malha.txt"
+    intensity = "100"
+    point = center
+    period = "dia"
+    interations = "4"
+    
+    f = open(".default.config", "w")
+    return f.write( "{}\n{}\n{}\n{}\n{}".format(malha, intensity, point, period, interations) )
+
+def malha(r, c):
+    f = open("data/malha.txt", "w")
+    string = "{}\n{}\n".format(r,c)
+
+    y1 = random.randint(0, r//4)
+    y2 = random.randint(r//2, (r//2)+(r//4))
+    print (y1,y2)
+    lis = []
+    
+    for k in range(0, r):
+        if (k >= y1 and k <= y2): 
+            x1 = random.randint(0, c//4)
+            x2 = random.randint(c//2, (c//2)+(c//4))
+            lis.append((x1,x2))
+        else:
+            lis.append (0)
+            
+    for i in range(0, r):
+        inter = lis[i]
+        for j in range(0, c):
+            value = 0
+            if (inter):
+                if (j>=inter[0] and j<=inter[1]):
+                    value=1
+            string+=str(value)
+            if(j!=c-1):
+                string+="\t"
+        if(i!=r-1):
+            string+="\n"
+    f.write(string)
+    f.close()
+    
+    default_config("{},{}".format(r//2, c//2))
+
+malha(row,column)
