@@ -4,10 +4,15 @@
 1. Se houver alguma malha disponível em ```./data``` e um arquivo ```.default.config``` configurado, basta alterar os campos que julgar necessário clicar em "Iniciar Simulação".
 2. Caso não tenha um arquivo ```.default.config``` configurado, carrega uma malha adequada e preencha manualmente os campos como no exemplo abaixo.
     Exemplo: 
+
     Malha: data/malha.txt
+
     Intensidade da fonte: 100
+
     Coordenadas (X,y): 5,5
+
     Gravar por: dia
+    
     Número de interações: 4
 
     Configure o caso masi adequado para sua situação.
