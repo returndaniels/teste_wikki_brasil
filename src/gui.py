@@ -1,8 +1,8 @@
 #!/usr/bin/env python3
 # -*- coding: utf-8 -*-
 
-#from tkinter import Tk
-import tkinter
+from tkinter import Tk
+from tkinter import Frame
 from tkinter import ttk
 from tkinter import filedialog
 from time import sleep
@@ -116,7 +116,7 @@ class GUI(ttk.Frame):
                     color = '#%02x%02x%02x' % (value,value,value)
                     if(cmap[i][j]>0):
                         self.show[i][j].destroy()
-                        self.show[i][j] = tkinter.Frame(self.frame, borderwidth=1, relief="sunken", width=w, height=h,bg=color)
+                        self.show[i][j] = Frame(self.frame, borderwidth=1, relief="sunken", width=w, height=h,bg=color)
                         self.show[i][j].grid(column=j, row=i)
 
     def createMap(self):
@@ -127,7 +127,7 @@ class GUI(ttk.Frame):
 
         for i in range(0, self.map.lines):
             for j in range(0, self.map.columns):
-                frames[i][j] = tkinter.Frame(self.frame, borderwidth=1, relief="sunken", width=w, height=h,bg=back[int(self.map.MAP[i][j])])
+                frames[i][j] = Frame(self.frame, borderwidth=1, relief="sunken", width=w, height=h,bg=back[int(self.map.MAP[i][j])])
                 frames[i][j].grid(column=j, row=i)
         return frames
 
@@ -138,6 +138,6 @@ class GUI(ttk.Frame):
             return filename
 
 if __name__ == '__main__': 
-    root = tkinter.Tk()
+    root = Tk()
     GUI(root) 
     root.mainloop()
