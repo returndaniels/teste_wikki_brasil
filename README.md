@@ -1,6 +1,6 @@
 # Teste para Estagiários #
 
-# Como executaruma simulação
+## Como executaruma simulação
 1. Se houver alguma malha disponível em ```./data``` e um arquivo ```.default.config``` configurado, basta alterar os campos que julgar necessário clicar em "Iniciar Simulação".
 2. Caso não tenha um arquivo ```.default.config``` configurado, carrega uma malha adequada e preencha manualmente os campos como no exemplo abaixo.
     Exemplo: 
@@ -13,7 +13,7 @@
 
     Configure o caso masi adequado para sua situação.
 
-# Como gerar aleátoria uma malha M x N para testes
+## Como gerar aleátoria uma malha M x N para testes
 1. Acesse a raiz do projeto
 2. Execute o comando:
     ```
